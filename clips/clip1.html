@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #000000;
+      }
+
+      img {
+        height: 600px;
+        width: 300px;
+        object-fit: cover;
+        clip-path: circle(20% at 0 0);
+        transition: clip-path 1s cubic-bezier(1, 0, 0, 1);
+      }
+
+      img:hover {
+        clip-path: circle(75% at 50% 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../assets/images/illustration-1.jpg" alt="" />
+    </div>
+  </body>
+</html>
