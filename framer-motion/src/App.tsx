@@ -1,14 +1,18 @@
-import One from "./components/One";
-import Three from "./components/Three";
-import Two from "./components/Two";
+import AnimationControls from "./components/AnimationControls";
+import InteractionAnimation from "./components/InteractionAnimation";
+import InView from "./components/InView";
+import Motion from "./components/Motion";
 
 const App = () => {
   return (
-    <div style={{ display: "grid", placeContent: "center", height: "100vh" }}>
-      {/* <One /> */}
-      {/* <Two /> */}
-      <Three />
-    </div>
+    <>
+      {/* <div style={{ display: "grid", placeContent: "center", height: "100vh" }}>
+        <Motion />
+        <InteractionAnimation />
+        <AnimationControls />
+      </div> */}
+      <InView />
+    </>
   );
 };
 

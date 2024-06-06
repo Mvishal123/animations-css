@@ -1,7 +1,7 @@
 import { motion, MotionConfig } from "framer-motion";
 import React from "react";
 
-const Two = () => {
+const InteractionAnimation = () => {
   return (
     <MotionConfig transition={{ duration: 0.2, ease: "easeInOut" }}>
       <motion.button
@@ -41,4 +41,4 @@ const Two = () => {
   );
 };
 
-export default Two;
+export default InteractionAnimation;

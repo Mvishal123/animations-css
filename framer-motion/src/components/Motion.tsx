@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 
-const One = () => {
+const Motion = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
@@ -51,4 +51,4 @@ const One = () => {
   );
 };
 
-export default One;
+export default Motion;

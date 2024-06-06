@@ -1,7 +1,7 @@
 import { motion, useAnimationControls } from "framer-motion";
 import React from "react";
 
-const Three = () => {
+const AnimationControls = () => {
   const [isFirst, setIsFirst] = React.useState(true);
   const controls = useAnimationControls();
   const handleClick = () => {
@@ -52,4 +52,4 @@ const Three = () => {
   );
 };
 
-export default Three;
+export default AnimationControls;
