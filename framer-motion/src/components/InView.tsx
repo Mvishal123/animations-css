@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 const InView = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { margin: "-500px" });
+  const inView = useInView(ref, { amount: .9 });
 
   return (
     <div
