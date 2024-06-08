@@ -8,6 +8,7 @@ import "./App.css";
 import HorizontalScroll from "./components/HorizontalScroll";
 import HoverButtonAnimation from "./components/HoverButtonAnimation";
 import MouseFollow from "./components/MouseFollow";
+import StripeHoverEffect from "./components/StripeHoverEffect";
 
 const App = () => {
   return (
@@ -31,7 +32,9 @@ const App = () => {
       {/* <ScrollReveal /> */}
       {/* <HorizontalScroll /> */}
       {/* <HoverButtonAnimation /> */}
-      <MouseFollow />
+      {/* <MouseFollow /> */}
+
+      <StripeHoverEffect />
     </>
   );
 };
