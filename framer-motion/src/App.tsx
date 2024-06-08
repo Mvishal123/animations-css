@@ -5,6 +5,7 @@ import Motion from "./components/Motion";
 import ScrollAnimation from "./components/ScrollAnimation";
 import ScrollReveal from "./components/ScrollReveal";
 import "./App.css"
+import HorizontalScroll from "./components/HorizontalScroll";
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
     //   {/* <InView /> */}
     // </>
     <>
-      <ScrollReveal />
+      {/* <ScrollReveal /> */}
+      <HorizontalScroll />
     </>
   );
 };
