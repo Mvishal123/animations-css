@@ -7,6 +7,7 @@ import ScrollReveal from "./components/ScrollReveal";
 import "./App.css";
 import HorizontalScroll from "./components/HorizontalScroll";
 import HoverButtonAnimation from "./components/HoverButtonAnimation";
+import MouseFollow from "./components/MouseFollow";
 
 const App = () => {
   return (
@@ -29,7 +30,8 @@ const App = () => {
     <>
       {/* <ScrollReveal /> */}
       {/* <HorizontalScroll /> */}
-      <HoverButtonAnimation />
+      {/* <HoverButtonAnimation /> */}
+      <MouseFollow />
     </>
   );
 };
