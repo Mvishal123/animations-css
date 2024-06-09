@@ -46,36 +46,72 @@ const ClipPathLinks = () => {
 
 // Clip paths
 const NO_CLIP = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
-const BOTTOM_RIGHT_CLIP = "polygon(0 0, 100% 0, 0 0, 0% 100%)";
-const TOP_RIGHT_CLIP = "polygon(0 0, 0 100%, 100% 100%, 0% 100%)";
-const BOTTOM_LEFT_CLIP = "polygon(100% 100%, 100% 0, 100% 100%, 0 100%)";
-const TOP_LEFT_CLIP = "polygon(0 0, 100% 0, 100% 100%, 100% 0)";
+const BOTTOM_RIGHT_CLIP = "polygon(100% 100%, 100% 0, 100% 100%, 0 100%)";
+const TOP_RIGHT_CLIP = "polygon(0 0, 100% 0, 100% 100%, 100% 0)";
+const BOTTOM_LEFT_CLIP = "polygon(0 0, 0 100%, 100% 100%, 0% 100%)";
+const TOP_LEFT_CLIP = "polygon(0 0, 100% 0, 0 0, 0 100%)";
 
 // Entry animations
 const entryAnimations = {
   top: [TOP_LEFT_CLIP, NO_CLIP],
   right: [TOP_RIGHT_CLIP, NO_CLIP],
+  bottom: [TOP_LEFT_CLIP, NO_CLIP],
+  left: [TOP_LEFT_CLIP, NO_CLIP],
 };
 
 // Exit animations
 const exitAnimations = {
   top: [NO_CLIP, BOTTOM_LEFT_CLIP],
   right: [NO_CLIP, BOTTOM_RIGHT_CLIP],
+  bottom: [NO_CLIP, BOTTOM_LEFT_CLIP],
+  left: [NO_CLIP, BOTTOM_LEFT_CLIP],
 };
 
 const LinkBox = ({ Icon, href }: any) => {
   const [scope, animate] = useAnimate();
 
   const onMouseEnterHandler = (e: MouseEvent) => {
+    const side = getSide(e);
     animate(scope.current, {
-      clipPath: entryAnimations.right,
+      clipPath: entryAnimations[side as keyof typeof entryAnimations],
     });
   };
 
   const onMouseLeaveHandler = (e: MouseEvent) => {
+    const side = getSide(e);
     animate(scope.current, {
-      clipPath: exitAnimations.right,
+      clipPath: exitAnimations[side as keyof typeof exitAnimations],
     });
+  };
+
+  const getSide = (e: MouseEvent) => {
+    const box = (e.target as HTMLElement).getBoundingClientRect();
+
+    const proximityLeft = {
+      proximity: Math.abs(box.left - e.clientX),
+      side: "left",
+    };
+    const proximityRight = {
+      proximity: Math.abs(box.right - e.clientX),
+      side: "right",
+    };
+    const proximityTop = {
+      proximity: Math.abs(box.top - e.clientY),
+      side: "top",
+    };
+    const proximityBottom = {
+      proximity: Math.abs(box.bottom - e.clientY),
+      side: "bottom",
+    };
+
+    const sortedProximities = [
+      proximityLeft,
+      proximityRight,
+      proximityTop,
+      proximityBottom,
+    ].sort((a, b) => a.proximity - b.proximity);
+
+    return sortedProximities[0].side;
   };
 
   return (

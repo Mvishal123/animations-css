@@ -12,29 +12,31 @@ import StripeHoverEffect from "./components/StripeHoverEffect";
 
 const App = () => {
   return (
-    // <>
-    //   <div
-    //     style={{
-    //       display: "grid",
-    //       placeContent: "center",
-    //       height: "100vh",
-    //       width: "100vw",
-    //     }}
-    //   >
-    //     {/* <Motion />
-    //     <InteractionAnimation />
-    //     <AnimationControls /> */}
-    //     {/* <ScrollAnimation /> */}
-    //   </div>
-    //   {/* <InView /> */}
-    // </>
     <>
-      {/* <ScrollReveal /> */}
-      {/* <HorizontalScroll /> */}
-      {/* <HoverButtonAnimation /> */}
-      {/* <MouseFollow /> */}
+      <>
+        {/* <div
+          style={{
+            display: "grid",
+            placeContent: "center",
+            height: "100vh",
+            width: "100vw",
+          }}
+        >
+          <Motion />
+        <InteractionAnimation />
+        <AnimationControls />
+          <ScrollAnimation />
+        </div> */}
+        {/* <InView /> */}
+      </>
+      <>
+        {/* <ScrollReveal /> */}
+        {/* <HorizontalScroll /> */}
+        {/* <HoverButtonAnimation /> */}
+        {/* <MouseFollow /> */}
 
-      <StripeHoverEffect />
+        <StripeHoverEffect />
+      </>
     </>
   );
 };
