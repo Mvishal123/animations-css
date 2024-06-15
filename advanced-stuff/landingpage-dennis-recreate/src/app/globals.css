@@ -9,5 +9,9 @@
 }
 
 body {
-  @apply text-white m-0 p-0
+  @apply text-white m-0 p-0;
+}
+
+#projectModal {
+  transition: top 0.6 cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }

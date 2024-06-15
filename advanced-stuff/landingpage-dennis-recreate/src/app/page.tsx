@@ -1,6 +1,7 @@
 "use client";
 
 import Hero from "@/components/hero";
+import Projects from "@/components/projects";
 import { useEffect } from "react";
 
 const Page = () => {
@@ -13,7 +14,8 @@ const Page = () => {
   }, []);
   return (
     <div>
-      <Hero />
+      {/* <Hero /> */}
+      <Projects />
     </div>
   );
 };
