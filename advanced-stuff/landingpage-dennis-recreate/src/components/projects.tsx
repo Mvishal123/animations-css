@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Project from "./project";
 import ProjectModal from "./projectModal";
 
@@ -44,8 +44,13 @@ const Projects = () => {
     index: 0,
   });
 
+  const mainRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="relative h-screen flex items-center justify-center">
+    <div
+      className="relative h-screen flex items-center justify-center"
+      ref={mainRef}
+    >
       <div className="flex flex-col w-[80%] mx-auto">
         {projects.map((project, index) => (
           <Project
@@ -61,6 +66,7 @@ const Projects = () => {
         projects={projects}
         active={currentProject.active}
         index={currentProject.index}
+        mainRef={mainRef}
       />
     </div>
   );

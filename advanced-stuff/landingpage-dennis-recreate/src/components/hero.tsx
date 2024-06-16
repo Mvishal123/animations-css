@@ -25,7 +25,6 @@ const Hero = () => {
         start: 0,
         end: window.innerHeight,
         scrub: 0.25,
-        markers: true,
         onUpdate: (e) => {
           direction = e.direction;
         },
@@ -44,11 +43,9 @@ const Hero = () => {
     gsap.set(secondPara.current, { xPercent: xPercent });
     requestAnimationFrame(animation);
     xPercent += 0.1 * direction;
-
-    console.log({ xPercent, direction });
   };
   return (
-    <div className="relative overflow-hidden mb-[100vh]">
+    <div className="relative overflow-hidden">
       <Image
         src="/background.jpg"
         alt="background"

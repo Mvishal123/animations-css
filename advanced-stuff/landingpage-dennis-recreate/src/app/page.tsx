@@ -14,7 +14,7 @@ const Page = () => {
   }, []);
   return (
     <div>
-      {/* <Hero /> */}
+      <Hero />
       <Projects />
     </div>
   );
