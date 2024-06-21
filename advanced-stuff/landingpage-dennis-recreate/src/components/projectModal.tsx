@@ -22,8 +22,6 @@ const ProjectModal = ({
     const leftHandler = (e: MouseEvent) => {
       const { clientX, clientY } = e;
 
-      console.log(clientX, clientY);
-
       ref.current?.animate(
         {
           top: `${clientY - 350 / 2}px`,

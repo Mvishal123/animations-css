@@ -1,26 +1,55 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
-import { AnimatePresence, delay, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRef, useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const menuRef = useRef<HTMLButtonElement>(null);
 
   const sidebarvariants = {
     initial: { x: 600 },
     open: { x: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
     close: { x: 600, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
   };
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: document.documentElement,
+      start: 0,
+      end: window.innerHeight - 80,
+      onLeave: () => {
+        gsap.to(menuRef.current, {
+          scale: 1,
+          opacity: 1,
+          ease: "power1.inOut",
+        });
+      },
+      onEnterBack: () => {
+        gsap.to(menuRef.current, {
+          scale: 0,
+          opacity: 0,
+          ease: "power1.inOut",
+        });
+      },
+    });
+  });
   return (
     <header className="">
       <button
+        ref={menuRef}
         onClick={() => setIsMenuOpen((prev) => !prev)}
         className={clsx(
-          `fixed p-4 h-[90px] w-[90px] rounded-full z-[999] m-10 right-0 flex flex-col justify-center items-center
-          border-none outline-none
+          `fixed p-4 h-[90px] w-[90px] rounded-full z-[999] m-10 right-0 flex flex-col justify-center items-center scale-0 opacity-0
         after:w-full after:h-1  after:relative 
         before:w-full before:h-1 before:relative after:transition-all after:duration-1000 before:transition-all before:duration-1000 transition-colors duration-1000
       `,
@@ -29,10 +58,6 @@ const Header = () => {
             : "before:-top-2 after:top-2 bg-slate-800 after:bg-white before:bg-white"
         )}
       ></button>
-      {/* {isMenuOpen && (
-        <div className="fixed z-[90] inset-0 top-0 left-0 bg-slate-300/20 backdrop-blur-sm h"></div>
-      )} */}
-
       <AnimatePresence mode="wait">
         {isMenuOpen && (
           <motion.div
@@ -95,7 +120,11 @@ const NavLinks = ({
     initial: { x: 600 },
     open: (index: number) => ({
       x: 0,
-      transition: { duration: .9, ease: [0.76, 0, 0.24, 1], delay: index * 0.1 },
+      transition: {
+        duration: 0.9,
+        ease: [0.76, 0, 0.24, 1],
+        delay: index * 0.1,
+      },
     }),
     close: (index: number) => ({
       x: 600,
