@@ -45,6 +45,18 @@ const Header = () => {
   });
   return (
     <header className="">
+      <main className="px-12 md:px-24 absolute top-6 z-[100] items-center flex justify-between w-full">
+        <div className="text-[1.5rem] md:text-[2rem]">Vishal</div>
+        <nav>
+          <ul className="flex gap-3 md:gap-10 items-center">
+            {navItems.map((item, index) => (
+              <li key={item.title}>
+                <Link href={item.href}>{item.title}</Link>{" "}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </main>
       <button
         ref={menuRef}
         onClick={() => setIsMenuOpen((prev) => !prev)}
