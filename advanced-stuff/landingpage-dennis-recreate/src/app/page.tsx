@@ -1,7 +1,8 @@
 "use client";
 
-import Description from "@/components/descritption";
+import Description from "@/components/description";
 import Hero from "@/components/hero";
+import ProjectSlider from "@/components/project-slider";
 import Projects from "@/components/projects";
 import { useEffect } from "react";
 
@@ -18,6 +19,7 @@ const Page = () => {
       <Hero />
       <Description />
       <Projects />
+      <ProjectSlider />
     </div>
   );
 };

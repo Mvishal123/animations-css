@@ -8,7 +8,7 @@ const splitDesc = desc.split(" ");
 
 const Description = () => {
   const ref = useRef<HTMLParagraphElement>(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { amount: "some" });
   return (
     <div className="my-48 px-40 flex items-start justify-between text-black">
       <div className="flex w-[750px] flex-wrap gap-2 text-4xl">
