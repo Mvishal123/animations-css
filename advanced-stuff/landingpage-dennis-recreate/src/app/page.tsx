@@ -1,5 +1,6 @@
 "use client";
 
+import Description from "@/components/descritption";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import { useEffect } from "react";
@@ -15,6 +16,7 @@ const Page = () => {
   return (
     <div>
       <Hero />
+      <Description />
       <Projects />
     </div>
   );

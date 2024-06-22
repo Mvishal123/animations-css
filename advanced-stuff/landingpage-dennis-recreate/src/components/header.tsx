@@ -106,6 +106,7 @@ const Header = () => {
                     linkedin
                   </a>
                 </div>
+                <li></li>
               </nav>
             </div>
           </motion.div>
