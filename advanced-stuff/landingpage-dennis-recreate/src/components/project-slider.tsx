@@ -46,7 +46,19 @@ const ProjectSlider = () => {
             </div>
           ))}
         </motion.div>
-        <div></div>
+        {/* <div className="h-[100px] relative">
+          <div
+            className=""
+            style={{
+              boxShadow: "0 60px 50px rgba(255, 255, 255, 0.5)",
+              height: "1550%",
+              position: "absolute",
+              width: "120%",
+              left: `-10%`,
+              zIndex: 10,
+            }}
+          ></div>
+        </div> */}
       </div>
     </div>
   );

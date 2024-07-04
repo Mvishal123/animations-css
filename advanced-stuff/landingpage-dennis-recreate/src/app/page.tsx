@@ -1,6 +1,7 @@
 "use client";
 
 import Description from "@/components/description";
+import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import ProjectSlider from "@/components/project-slider";
 import Projects from "@/components/projects";
@@ -20,6 +21,7 @@ const Page = () => {
       <Description />
       <Projects />
       <ProjectSlider />
+      <Footer />
     </div>
   );
 };
