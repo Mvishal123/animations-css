@@ -1,21 +1,54 @@
-import React from "react";
+"use client";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { MoveLeft } from "lucide-react";
+import React, { useRef } from "react";
 
 const Footer = () => {
+  const arrowRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLButtonElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"],
+  });
+
+  const arrowAnimate = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const circleAnimate = useTransform(scrollYProgress, [0, 1], [120, 50]);
+  const containerY = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+
   return (
-    <div className="bg-black/90 pt-40 pb-12">
+    <motion.div
+      className="bg-black/90 pt-40 pb-12"
+      ref={containerRef}
+      style={{ y: containerY }}
+    >
       <div className="px-12 md:px-40">
-        <div>
-          <p className="text-7xl flex items-center font-light">
-            <span className="inline-block h-[4rem] w-[4rem] mr-6 bg-white rounded-full" />
-            Let's work
-          </p>
-          <p className="text-7xl  font-light">together</p>
+        <div className="flex items-center relative">
+          <div>
+            <p className="text-7xl flex items-center font-light">
+              <span className="inline-block h-[4rem] w-[4rem] mr-6 bg-white rounded-full" />
+              Let's work
+            </p>
+            <p className="text-7xl  font-light">together</p>
+          </div>
+          <motion.div
+            className="absolute right-20 top-0"
+            ref={arrowRef}
+            style={{ rotate: arrowAnimate }}
+          >
+            <MoveLeft className="h-8 w-8" />
+          </motion.div>
         </div>
         <div className="relative h-[5rem] mt-16 flex flex-col justify-center">
           <div className="h-[1px] bg-white/40"></div>
-          <button className="rounded-full bg-blue-700 border border-white/40 absolute right-32 p-12 aspect-square flex items-center text-xl font-light">
+          <motion.button
+            className="rounded-full bg-blue-700 absolute p-12 aspect-square flex items-center text-xl font-light"
+            ref={circleRef}
+            style={{ right: circleAnimate }}
+          >
             get in touch
-          </button>
+          </motion.button>
         </div>
         <div>
           <div className="space-x-6 mt-8">
@@ -58,7 +91,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
