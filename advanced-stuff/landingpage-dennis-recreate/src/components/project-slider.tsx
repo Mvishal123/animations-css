@@ -12,7 +12,7 @@ const ProjectSlider = () => {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <div className="mt-60 mb-32 overflow-hidden z-[99] relative bg-white pb-24">
+    <div className="mt-60 mb-32 overflow-hidden z-[99] relative bg-white pb-60 shadow-2xl shadow-black">
       <div ref={sliderRef} className="flex flex-col gap-20">
         <motion.div
           className="flex overflow-hidden w-[180vw] gap-10 relative -left-[20vw]"
