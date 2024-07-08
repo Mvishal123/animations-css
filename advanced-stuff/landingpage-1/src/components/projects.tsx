@@ -43,7 +43,6 @@ const Projects = () => {
       pin: true,
       start: "0px top+=200",
       end: document.body.offsetHeight - window.innerHeight,
-      markers: true,
     });
   }, []);
   return (

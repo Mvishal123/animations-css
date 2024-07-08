@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      position: relative;
+    }
+    nav {
+      z-index: 100;
+    }
+
+    ul li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-family: cursive;
+      cursor: pointer;
+    }
+
+    .open {
+      z-index: 50;
+      height: 40vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background-color: antiquewhite;
+    }
+
+    .close {
+      opacity: 0;
+      visibility: hidden;
+      top: -100%;
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>menu<i class="fa fa-chevron-down" style="color: gray"></i></li>
+        </ul>
+      </nav>
+      <div class="close"></div>
+    </header>
+
+    <script>
+      const menu = document.querySelector("li");
+
+      menu.addEventListener("click", () => {
+        if (menu.classList.contains("open")) {
+          menu.classList.remove("open");
+          menu.classList.add("close");
+        } else {
+          menu.classList.add("open");
+          menu.classList.remove("close");
+        }
+      });
+    </script>
+  </body>
+</html>
