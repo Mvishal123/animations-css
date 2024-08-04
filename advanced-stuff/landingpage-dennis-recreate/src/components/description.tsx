@@ -14,6 +14,7 @@ const Description = () => {
       <div className="flex w-[750px] flex-wrap gap-2 text-4xl">
         {splitDesc.map((word, index) => (
           <motion.p
+            key={index}
             ref={ref}
             variants={variants}
             initial="initial"

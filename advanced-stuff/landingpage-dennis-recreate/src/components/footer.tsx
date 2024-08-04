@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <p className="text-7xl flex items-center font-light">
               <span className="inline-block h-[4rem] w-[4rem] mr-6 bg-white rounded-full" />
-              Let's work
+              Let&apos;s work
             </p>
             <p className="text-7xl  font-light">together</p>
           </div>

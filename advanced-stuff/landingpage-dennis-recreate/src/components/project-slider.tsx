@@ -15,7 +15,7 @@ const ProjectSlider = () => {
     <div className="mt-60 mb-32 overflow-hidden z-[99] relative bg-white pb-60 shadow-2xl shadow-black">
       <div ref={sliderRef} className="flex flex-col gap-20">
         <motion.div
-          className="flex overflow-hidden w-[180vw] gap-10 relative -left-[20vw]"
+          className="flex overflow-hidden w-[220vw] gap-10 relative -left-[20vw]"
           style={{ x: x1 }}
         >
           {projects.map((project, index) => (
@@ -31,7 +31,7 @@ const ProjectSlider = () => {
           ))}
         </motion.div>
         <motion.div
-          className="flex overflow-hidden w-[180vw] gap-10 relative -left-[20vw]"
+          className="flex overflow-hidden w-[220vw] gap-10 relative -left-[20vw]"
           style={{ x: x2 }}
         >
           {projects.map((project, index) => (

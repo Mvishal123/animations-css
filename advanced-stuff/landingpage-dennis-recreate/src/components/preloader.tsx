@@ -37,7 +37,7 @@ const Preloader = () => {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.2 }}
         className="flex items-center gap-6"
       >
         <span className="h-6 w-6 bg-[#fefae0] rounded-full"></span>

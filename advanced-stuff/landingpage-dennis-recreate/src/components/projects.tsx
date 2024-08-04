@@ -54,6 +54,7 @@ const Projects = () => {
       <div className="flex flex-col w-[80%] mx-auto">
         {projects.map((project, index) => (
           <Project
+            key={index}
             setCurrentProject={setCurrentProject}
             title={project.title}
             color={project.color}

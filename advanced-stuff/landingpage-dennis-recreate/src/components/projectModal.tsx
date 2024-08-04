@@ -61,6 +61,7 @@ const ProjectModal = ({
         <div className="flex flex-col h-full w-full relative ">
           {projects.map((project: any) => (
             <div
+              key={project.id}
               className="h-[350px] w-[400px] flex items-center justify-center relative"
               style={{
                 top: `${index * -100}%`,
